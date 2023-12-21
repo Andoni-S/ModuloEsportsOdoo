@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- vista Formulario -->
+    <record id="game_form_view" model="ir.ui.view">
+        <field name="name">game.form.view</field>
+        <field name="model">esports.game</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe-tittle">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" required="1" placeholder="e.g. Tetris"></field>
+                        </h1>
+                        <label for="genre"/>
+                        <h1>
+                            <field name="genre" required="1" placeholder="e.g. platform game"></field>
+                        </h1>
+                        <label for="platform"/>
+                        <h1>
+                            <field name="platform" required="1" placeholder="e.g. Play Station 4"></field>
+
+                        </h1>
+                        <label for="pvp_type"/>
+                        <h1>
+                            <field name="pvp_type" widget="selection" options="{'selection': [('1v1', '1 V 1'), ('3v3', '3 V 3'), ('5v5', '5 V 5')]}"></field>
+                        </h1>
+                        <label for="releaseDate"/>
+                        <h1>
+                            <field name="releaseDate" widget="date" placeholder="Release Date"></field>
+                        </h1>
+                    </div>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- vista Arbol -->
+    <record id="game_tree_view" model="ir.ui.view">
+        <field name="name">game.tree.view</field>
+        <field name="model">esports.game</field>
+        <field name="arch" type="xml">
+            <tree string="game" >
+                <field name="name" required="1"></field>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- vista Kanban -->
+    <record id="game-kanban-view" model="ir.ui.view">
+        <field name="name">game.kanban.view</field>
+        <field name="model">esports.game</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"></field>
+                <field name="name"></field>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('esports.game','image',record.id.raw_value)" alt="imagen game"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                </strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- vista search -->
+    <record id="game-search-view" model="ir.ui.view">
+        <field name="name">game.search.view</field>
+        <field name="model">esports.game</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"></field>
+            </search>
+        </field>
+    </record>
+</odoo>
