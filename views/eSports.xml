@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 <odoo>
-    <record id="game_action" model="ir.actions.act_window">
+    <record id="event_action" model="ir.actions.act_window">
         <field name="name">Games</field>
-        <field name="res_model">esports.game</field>
+        <field name="res_model">esports.event</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
     <menuitem name="esports" id="esports_menu"></menuitem>
-    <menuitem name="Games" id="games_menu" parent="esports_menu" action="game_action"></menuitem>
+    <menuitem name="Events" id="events_menu" parent="esports_menu" action="event_action"></menuitem>
 </odoo>
