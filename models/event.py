@@ -1,10 +1,10 @@
 from odoo import api, fields, models
-
 from odoo import fields, models
 
 class Event(models.Model):
     _name = "esports.event"
     _description = 'Description of your Esports event model'
+
 
     name = fields.Char("Name")
     location = fields.Char("Location")
