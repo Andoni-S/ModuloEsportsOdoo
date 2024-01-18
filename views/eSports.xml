@@ -5,6 +5,18 @@
         <field name="res_model">esports.event</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
+    <record id="event_action" model="ir.actions.act_window">
+        <field name="name">Events</field>
+        <field name="res_model">esports.event</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <record id="team_action" model="ir.actions.act_window">
+        <field name="name">Teams</field>
+        <field name="res_model">esports.team</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
     <menuitem name="esports" id="esports_menu"></menuitem>
+    <menuitem name="Games" id="games_menu" parent="esports_menu" action="game_action"></menuitem>
     <menuitem name="Events" id="events_menu" parent="esports_menu" action="event_action"></menuitem>
+    <menuitem name="Teams" id="teams_menu" parent="esports_menu" action="team_action"></menuitem>
 </odoo>
