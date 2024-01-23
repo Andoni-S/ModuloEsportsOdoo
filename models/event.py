@@ -15,3 +15,4 @@ class Event(models.Model):
     participant_num = fields.Integer("Participant Number")
     game_id = fields.Many2one("esports.game", string="Game")
     organizer_id = fields.Many2one("esports.organizer", string="Organizer")
+    teamEvent_id = fields.One2Many('teamEvent.Model', 'team_id', string='TeamEvent')
