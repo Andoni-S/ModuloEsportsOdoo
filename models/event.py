@@ -16,8 +16,10 @@ class Event(models.Model):
     game_id = fields.Many2one("esports.game", string="Game", required=True)
     organizer_id = fields.Many2one("esports.organizer", string="Organizer", required=True)
     player_ids = fields.Many2many("esports.player", string="Players")
+    teamEvent_ids = fields.One2many('esports.teamevent', 'event_id', string='TeamEvent')
 
     _sql_constraints = [
         ('unique_event_organizer_game', 'unique(organizer_id, game_id, date)', 'An event with the same organizer, game, and date already exists!'),
     ]
+
 

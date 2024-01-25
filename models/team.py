@@ -12,7 +12,7 @@ class Team(models.Model):
 
     player_id = fields.Many2many('esports.player', string="Player")
 
-    "teamEvent_id = fields.One2many('esports.teamEvent', 'event_id', string='TeamEvent')"
+    teamEvent_ids = fields.One2many('esports.teamEvent', 'team_id', string='TeamEvent')
 
     @api.constrains('name')
     def _checkName(self):
