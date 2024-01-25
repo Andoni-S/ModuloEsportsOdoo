@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- vista Formulario -->
+    <record id="team_form_view" model="ir.ui.view">
+        <field name="name">team.form.view</field>
+        <field name="model">esports.team</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe-tittle">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" required="1" placeholder="e.g. Test Team"></field>
+                        </h1>
+                        <label for="foundation"/>
+                        <h1>
+                            <field name="foundation" required="1" placeholder="e.g. 14/12/2023"></field>
+                        </h1>
+                        <label for="coach"/>
+                        <h1>
+                            <field name="coach" required="1" placeholder="e.g. Name Nameson"></field>
+                        </h1>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- vista Arbol -->
+    <record id="team_tree_view" model="ir.ui.view">
+        <field name="name">team.tree.view</field>
+        <field name="model">esports.team</field>
+        <field name="arch" type="xml">
+            <tree string="team" >
+                <field name="name" required="1"></field>
+                <field name="foundation" required="1"></field>
+                <field name="coach" required="1"></field>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- vista Kanban -->
+    <record id="team-kanban-view" model="ir.ui.view">
+        <field name="name">team.kanban.view</field>
+        <field name="model">esports.team</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"></field>
+                <field name="name"></field>
+                <field name="foundation"></field>
+                <field name="coach"></field>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('esports.team','image',record.id.raw_value)" alt="imagen team"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                </strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- vista search -->
+    <record id="team-search-view" model="ir.ui.view">
+        <field name="name">team.search.view</field>
+        <field name="model">esports.team</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"></field>
+            </search>
+        </field>
+    </record>
+</odoo>
