@@ -8,4 +8,3 @@ class Organizer(models.Model):
     company = fields.Char("Company")
     web = fields.Char("Web")
     # events = fields.One2Many("esports.event","organizer_id",string = "Events")
-
