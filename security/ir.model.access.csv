@@ -15,3 +15,7 @@ access_event_organizer,Access Organizer,model_esports_event,esports_group_organi
 access_admin_admin,Access Admin,model_esports_admin,esports_group_admin,1,1,1,1
 access_admin_player,Access Player ,model_esports_admin,esports_group_player,1,1,1,1
 access_admin_organizer,Access Organizer ,model_esports_admin,esports_group_organizer,1,1,1,1
+
+access_player_admin,Access Admin,model_esports_player,esports_group_admin,1,1,1,1
+access_player_player,Access Player ,model_esports_player,esports_group_player,1,1,1,1
+access_player_organizer,Access Organizer ,model_esports_player,esports_group_organizer,1,1,1,1
