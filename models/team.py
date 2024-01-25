@@ -5,13 +5,12 @@ from odoo.exceptions import ValidationError
 class Team(models.Model):
     _name = "esports.team"
 
-    id = fields.Integer()
     name = fields.Text()
     foundation = fields.Date()
     coach = fields.Text()
 
     player_id = fields.Many2many('esports.player', string="Player")
-
+    event_id = fields.Many2many('esports.event', string="Event")
     "teamEvent_id = fields.One2many('esports.teamEvent', 'event_id', string='TeamEvent')"
 
     @api.constrains('name')

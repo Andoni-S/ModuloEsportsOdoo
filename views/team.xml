@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <div class="oe-tittle">
+                    <div class="oe-title">
                         <label for="name"/>
                         <h1>
                             <field name="name" required="1" placeholder="e.g. Test Team"></field>
