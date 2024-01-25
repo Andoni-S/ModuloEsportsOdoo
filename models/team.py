@@ -1,18 +1,18 @@
-from odoo import fields, models
-from setuptools.config._validate_pyproject import ValidationError
+from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class Team(models.Model):
     _name = "esports.team"
 
     id = fields.Integer()
-    name = fields.String()
+    name = fields.Text()
     foundation = fields.Date()
-    coach = fields.String()
+    coach = fields.Text()
 
     player_id = fields.Many2many('esports.player', string="Player")
 
-    teamEvent_id = fields.One2Many('esports.teamEvent', 'event_id', string='TeamEvent')
+    teamEvent_id = fields.One2many('esports.teamEvent', 'event_id', string='TeamEvent')
 
     @api.constrains('name')
     def _checkName(self):
@@ -21,7 +21,9 @@ class Team(models.Model):
                 raise ValidationError("Your field is too long: %s" % record.name)
     @api.constrains('foundation')
     def _checkFoundation(self):
-        for record in self:
+        for team in self:
+            if team.foundation > fields.Date.today():
+                raise ValidationError("La fecha no puede ser futura.")
 
     @api.constrains('coach')
     def _checkCoach(self):

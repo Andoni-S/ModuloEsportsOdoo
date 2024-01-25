@@ -33,19 +33,23 @@
         <field name="arch" type="xml">
             <tree string="team" >
                 <field name="name" required="1"></field>
+                <field name="foundation" required="1"></field>
+                <field name="coach" required="1"></field>
             </tree>
         </field>
     </record>
 
 
     <!-- vista Kanban -->
-    <record id="game-kanban-view" model="ir.ui.view">
+    <record id="team-kanban-view" model="ir.ui.view">
         <field name="name">team.kanban.view</field>
         <field name="model">esports.team</field>
         <field name="arch" type="xml">
             <kanban>
                 <field name="id"></field>
                 <field name="name"></field>
+                <field name="foundation"></field>
+                <field name="coach"></field>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
