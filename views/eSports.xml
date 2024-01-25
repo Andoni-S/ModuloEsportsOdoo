@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <odoo>
-    <record id="event_action" model="ir.actions.act_window">
+    <record id="game_action" model="ir.actions.act_window">
         <field name="name">Games</field>
-        <field name="res_model">esports.event</field>
+        <field name="res_model">esports.game</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
     <record id="event_action" model="ir.actions.act_window">

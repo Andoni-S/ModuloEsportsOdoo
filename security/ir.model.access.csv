@@ -1,12 +1,12 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_game_admin,Access Admin,model_esports_game,inventory_group_admin,1,1,1,1
-access_game_player,Access Player ,model_esports_game,inventory_group_player,1,,,
-access_game_organizer,Access Organizer ,model_esports_game,inventory_group_organizer,1,,,
+access_game_admin,Access Admin,model_esports_game,esports_group_admin,1,1,1,1
+access_game_player,Access Player,model_esports_game,esports_group_player,1,,,
+access_game_organizer,Access Organizer,model_esports_game,esports_group_organizer,1,,,
 
-access_team_admin,Access Admin,model_esports_team,inventory_group_admin,1,,,
-access_team_player,Access Player ,model_esports_team,inventory_group_player,1,1,1,1
-access_team_organizer,Access Organizer ,model_esports_team,inventory_group_organizer,1,,,
+access_team_admin,Access Admin,model_esports_team,esports_group_admin,1,,,
+access_team_player,Access Player,model_esports_team,esports_group_player,1,1,1,1
+access_team_organizer,Access Organizer,model_esports_team,esports_group_organizer,1,,,
 
-access_event_admin,Access Admin,model_esports_event,inventory_group_admin,1,,,
-access_event_player,Access Player ,model_esports_event,inventory_group_player,1,,,
-access_event_organizer,Access Organizer ,model_esports_event,inventory_group_organizer,1,1,1,1
+access_event_admin,Access Admin,model_esports_event,esports_group_admin,1,,,
+access_event_player,Access Player,model_esports_event,esports_group_player,1,,,
+access_event_organizer,Access Organizer,model_esports_event,esports_group_organizer,1,1,1,1
