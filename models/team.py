@@ -12,7 +12,7 @@ class Team(models.Model):
 
     player_id = fields.Many2many('esports.player', string="Player")
 
-    teamEvent_id = fields.One2many('esports.teamEvent', 'event_id', string='TeamEvent')
+    "teamEvent_id = fields.One2many('esports.teamEvent', 'event_id', string='TeamEvent')"
 
     @api.constrains('name')
     def _checkName(self):
@@ -23,7 +23,7 @@ class Team(models.Model):
     def _checkFoundation(self):
         for team in self:
             if team.foundation > fields.Date.today():
-                raise ValidationError("La fecha no puede ser futura.")
+                raise ValidationError("The date cannot be a future one.")
 
     @api.constrains('coach')
     def _checkCoach(self):
