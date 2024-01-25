@@ -29,6 +29,10 @@
                         <h1>
                             <field name="releaseDate" widget="date" placeholder="Release Date"></field>
                         </h1>
+                        <label for="admin_id"/>
+                        <h1>
+                            <field name="admin_id" widget="1" placeholder="1"></field>
+                        </h1>
                     </div>
 
                 </sheet>
