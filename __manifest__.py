@@ -11,7 +11,8 @@
         'views/templates.xml',
         'views/eSports.xml',
         'views/game.xml',
-        'views/team.xml'
+        'views/team.xml',
+        'views/event.xml'
         ],
     'description': """eSportsHub is an application to manage events for online Sports""",
     'author': "Andoni",

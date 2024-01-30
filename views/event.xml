@@ -6,9 +6,6 @@
         <field name="model">esports.event</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <button string="Participants" class="oe_highlight" type="object" name="action_view_participants"/>
-                </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
