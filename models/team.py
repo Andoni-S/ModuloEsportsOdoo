@@ -47,4 +47,4 @@ class Team(models.Model):
                     }
                 }
         else:
-            self.releaseDate = ""
+            self.foundation = ""
