@@ -11,6 +11,9 @@
         'views/templates.xml',
         'views/eSports.xml',
         'views/game.xml',
+        'views/partner.xml',
+        'report/reports.xml'],
+        'views/team.xml'
         'views/team.xml',
         'views/event.xml'
         ],

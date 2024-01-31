@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_game_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Game Report</h2>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Genre</th>
+                                    <th>Platform</th>
+                                    <th>PVP type</th>
+                                    <th>Release date</th>
+                                    <th>Admin</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="docs" t-as="o">
+                                    <td><t t-esc="o.name"/></td>
+                                    <td><t t-esc="o.genre"/></td>
+                                    <td><t t-esc="o.platform"/></td>
+                                    <td><t t-esc="o.pvp_type"/></td>
+                                    <td><t t-esc="o.releaseDate"/></td>
+                                    <td><t t-esc="o.admin_id.name"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="action_report_stats" model="ir.actions.report">
+            <field name="name">Game Report</field>
+            <field name="model">esports.game</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">esports.report_game_template</field>
+            <field name="report_file">esports.report_game_template</field>
+            <field name="binding_model_id" ref="model_esports_game"/>
+        </record>
+    </data>
+</odoo>
