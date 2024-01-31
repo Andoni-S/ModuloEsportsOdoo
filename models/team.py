@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 
@@ -31,3 +33,18 @@ class Team(models.Model):
                 raise ValidationError("Your field is too long: %s" % record.coach)
             if any(char.isdigit() for char in record.coach):
                 raise ValidationError("Coach should not contain numbers.")
+
+    @api.onchange('foundation')
+    def _onchange_foundation(self):
+        if self.foundation:
+            current_date = fields.Date.from_string(datetime.now())
+            foundation = fields.Date.from_string(self.foundation)
+            if foundation > current_date:
+                return {
+                    'warning': {
+                        'title': "Wrong date",
+                        'message': "You need to select a past date.",
+                    }
+                }
+        else:
+            self.releaseDate = ""
