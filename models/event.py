@@ -13,9 +13,10 @@ class Event(models.Model):
     prize = fields.Float("Prize")
     donation = fields.Float("Donation")
     participant_num = fields.Integer("Participant Number")
-    game_id = fields.Many2one("esports.game", string="Game", required=True)
-    organizer_id = fields.Many2one("esports.organizer", string="Organizer", required=True)
-    player_ids = fields.Many2many("esports.player", string="Players")
+    game_id = fields.Many2one('esports.game', string="Game", required=True)
+    organizer_id = fields.Many2one('esports.organizer', string="Organizer", required=True)
+    player_id = fields.Many2many('esports.player', string="Players")
+    team_id = fields.Many2many('esports.team', string="Team")
 
     _sql_constraints = [
         ('unique_event_organizer_game', 'unique(organizer_id, game_id, date)', 'An event with the same organizer, game, and date already exists!'),
