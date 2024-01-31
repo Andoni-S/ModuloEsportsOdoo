@@ -13,6 +13,8 @@
         'views/game.xml',
         'views/partner.xml',
         'report/reports.xml'],
+        'views/team.xml'
+        ],
     'description': """eSportsHub is an application to manage events for online Sports""",
     'author': "Andoni",
     'depends':['project'],

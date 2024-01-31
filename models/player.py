@@ -1,6 +1,9 @@
-from odoo import api, fields, models
+from odoo import fields, models
 
 class Player(models.Model):
-    _name = 'esports.player'
-    _description = 'Description of your Esports player model'
-    _inherit = 'esports.user'
+    _name = "esports.player"
+
+    id = fields.Integer()
+    level = fields.Integer()
+
+    team_id = fields.Many2many('Team.Model',string="Team")
