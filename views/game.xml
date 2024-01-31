@@ -40,13 +40,20 @@
         </field>
     </record>
 
-    <!-- vista Arbol -->
+
+
+
     <record id="game_tree_view" model="ir.ui.view">
         <field name="name">game.tree.view</field>
         <field name="model">esports.game</field>
         <field name="arch" type="xml">
-            <tree string="game" >
-                <field name="name" required="1"></field>
+            <tree string="Games">
+                <field name="name" required="1"/>
+                <field name="genre"/>
+                <field name="platform"/>
+                <field name="pvp_type"/>
+                <field name="releaseDate"/>
+                <field name="admin_id"/>
             </tree>
         </field>
     </record>
@@ -84,7 +91,12 @@
         <field name="model">esports.game</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"></field>
+                <field name="name"/>
+                <field name="genre"/>
+                <field name="platform"/>
+                <field name="pvp_type"/>
+                <field name="releaseDate"/>
+                <field name="admin_id"/>
             </search>
         </field>
     </record>

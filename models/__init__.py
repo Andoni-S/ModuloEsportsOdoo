@@ -5,3 +5,4 @@ from . import organizer
 from . import player
 from . import event
 from . import team
+from . import partner

@@ -30,21 +30,20 @@ class Game(models.Model):
             if len(record.platform) > 20:
                 raise ValidationError("Your field is too long: %s" % record.platform)
 
-    """
     @api.onchange('releaseDate')
     def _onchange_release_date(self):
-
-        current_date = fields.Date.from_string(datetime.now())
-        release_date = fields.Date.from_string(self.releaseDate)
-
-        if release_date > current_date:
-            return{
-                'warning':{
-                    'title': "Wrong release date",
-                    'message': "Careful, your release date is after today",
+        if self.releaseDate:
+            current_date = fields.Date.from_string(datetime.now())
+            release_date = fields.Date.from_string(self.releaseDate)
+            if release_date > current_date:
+                return {
+                    'warning': {
+                        'title': "Wrong release date",
+                        'message': "Careful, your release date is after today",
+                    }
                 }
-            }
-    """
+        else:
+            self.releaseDate = ""
 
     @api.model
     def create(self, values):
