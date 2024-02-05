@@ -20,5 +20,6 @@
     'depends':['project'],
     'website': "web?debug=1#action=85&model=esports.game&view_type=kanban&cids=1&menu_id=70",
     'license': 'LGPL-3',
-    'icon': '/esports/static/description/icon.png'
+    'application': 'true',
+    'installable': 'true'
 }

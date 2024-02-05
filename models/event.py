@@ -8,6 +8,7 @@ class Event(models.Model):
 
     name = fields.Char("Name", required=True)
     location = fields.Char("Location")
+    imagen = fields.Binary(string="Image", attachment=True)
     ong = fields.Char("NGO")
     date = fields.Datetime("Date")
     prize = fields.Float("Prize")
