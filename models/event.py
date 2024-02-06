@@ -1,5 +1,3 @@
-from odoo import api, fields, models
-
 from odoo import fields, models
 
 from datetime import datetime
@@ -21,8 +19,11 @@ class Event(models.Model):
     organizer_id = fields.Many2one('esports.organizer', string="Organizer", required=True)
     player_id = fields.Many2many('esports.player', string="Players")
     team_id = fields.Many2many('esports.team', string="Team")
-    state_event = fields.Selection([('created', 'Created'), ('in_progress', 'In Progress'), ('completed', 'Completed')],
-                                   string="State")
+    state_event = fields.Selection([
+        ('created', 'Created'),
+        ('in_progress', 'In Progress'),
+        ('completed', 'Completed')
+    ], string="State", default='created')
     date_create = fields.Datetime("Creation Date", default=datetime.today(), required=False, readOnly=True)
 
     _sql_constraints = [

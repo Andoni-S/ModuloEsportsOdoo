@@ -10,11 +10,14 @@
                     <field name="state_event" widget="statusbar" statusbar_visible="Created,In Progress,Completed"/>
                 </header>
                 <sheet>
-                    <field name="imagen" widget="imagen" class="oe_avatar"/>
                     <div class="oe_title">
-                        <h1>
+                        <h1>New Event Data</h1>
+                    </div>
+                    <field name="imagen" widget="image"/>
+                    <div class="oe_title">
+                        <h2>
                             <field name="name" string="Event Name"/>
-                        </h1>
+                        </h2>
                     </div>
                     <group>
                         <group>
@@ -32,6 +35,8 @@
                         <field name="participant_num"/>
                         <field name="donation"/>
                     </group>
+                    <field name="player_id"/>
+                    <field name="team_id"/>
                 </sheet>
             </form>
         </field>
