@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state_event" widget="statusbar" statusbar_visible="Created,In Progress,Completed"/>
+                    <field name="state_event" widget="statusbar"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -47,7 +47,9 @@
         <field name="name">esports.event.tree.view</field>
         <field name="model">esports.event</field>
         <field name="arch" type="xml">
-            <tree string="Events" class="colored_tree">
+            <tree string="Events" decoration-info="state_event == 'in_progress'"
+                  decoration-danger="state_event == 'completed'"
+                  decoration-muted="state_event == 'created'">
                 <field name="name"/>
                 <field name="date"/>
                 <field name="location"/>
