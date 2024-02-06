@@ -2,6 +2,9 @@ from odoo import api, fields, models
 
 from odoo import fields, models
 
+from datetime import datetime
+
+
 class Event(models.Model):
     _name = "esports.event"
     _description = 'Description of your Esports event model'
@@ -18,8 +21,11 @@ class Event(models.Model):
     organizer_id = fields.Many2one('esports.organizer', string="Organizer", required=True)
     player_id = fields.Many2many('esports.player', string="Players")
     team_id = fields.Many2many('esports.team', string="Team")
+    state_event = fields.Selection([('created', 'Created'), ('in_progress', 'In Progress'), ('completed', 'Completed')],
+                                   string="State")
+    date_create = fields.Datetime("Creation Date", default=datetime.today(), required=False, readOnly=True)
 
     _sql_constraints = [
-        ('unique_event_organizer_game', 'unique(organizer_id, game_id, date)', 'An event with the same organizer, game, and date already exists!'),
+        ('unique_event_organizer_game', 'unique(organizer_id, game_id, date)',
+         'An event with the same organizer, game, and date already exists!'),
     ]
-
