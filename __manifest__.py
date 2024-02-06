@@ -16,9 +16,8 @@
         'views/event.xml',
         'report/reports.xml'],
     'description': """eSportsHub is an application to manage events for online Sports""",
-    'author': "Andoni",
+    'author': "Andoni, ANder and Jago",
     'depends':['project'],
-    'website': "web?debug=1#action=85&model=esports.game&view_type=kanban&cids=1&menu_id=70",
     'license': 'LGPL-3',
     'application': 'true',
     'installable': 'true'

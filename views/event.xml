@@ -47,12 +47,13 @@
         <field name="name">esports.event.tree.view</field>
         <field name="model">esports.event</field>
         <field name="arch" type="xml">
-            <tree string="Events">
+            <tree string="Events" class="colored_tree">
                 <field name="name"/>
                 <field name="date"/>
                 <field name="location"/>
                 <field name="organizer_id"/>
                 <field name="game_id"/>
+                <field name="state_event" class="rounded_status"/>
             </tree>
         </field>
     </record>
@@ -109,6 +110,9 @@
                 <field name="location"/>
                 <field name="organizer_id"/>
                 <field name="game_id"/>
+                <filter name="filter_created" string="Created" domain="[('state_event', '=', 'created')]"/>
+                <filter name="filter_in_progress" string="In Progress" domain="[('state_event', '=', 'in_progress')]"/>
+                <filter name="filter_completed" string="Completed" domain="[('state_event', '=', 'completed')]"/>
             </search>
         </field>
     </record>
